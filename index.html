@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA & CGPA Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>GPA & CGPA Calculator</h1>
+            <div class="subtitle">Compute Your Academic Excellence</div>
+        </header>
+        <section class="setup">
+            <div class="inputs">
+                <div class="field">
+                    <label for="numSubjects">Number of Subjects</label>
+                    <input type="number" id="numSubjects" min="1" placeholder="5">
+                </div>
+                <div class="field">
+                    <label for="scale">Scale</label>
+                    <select id="scale">
+                        <option value="10">10-Point</option>
+                        <option value="4">4-Point</option>
+                    </select>
+                </div>
+                <button id="createTable" class="btn">INITIALIZE</button>
+            </div>
+        </section>
+
+        <form id="gpaForm"></form>
+        <div id="result" class="result"></div>
+
+        <section class="cgpa">
+            <h2>Calculate CGPA</h2>
+            <div class="inputs">
+                <div class="field">
+                    <label for="prevCgpa">Previous CGPA</label>
+                    <input type="number" id="prevCgpa" step="0.01" min="0" placeholder="8.5">
+                </div>
+                <div class="field">
+                    <label for="prevCredits">Previous Credits</label>
+                    <input type="number" id="prevCredits" min="0" placeholder="60">
+                </div>
+                <button id="calculateCgpa" class="btn">CALCULATE</button>
+            </div>
+            <div id="cgpaResult" class="result"></div>
+        </section>
+
+        <footer>
+            <p>&copy; Made with ❤️ by Vedant and his co-founder ChatGPT</p>
+        </footer>
+    </div>
+</body>
+
+</html>
