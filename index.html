@@ -1,60 +1,58 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPA & CGPA Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2nd Sem GPA & CGPA Calculator</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>GPA & CGPA Calculator</h1>
-            <div class="subtitle">Compute Your Academic Excellence</div>
-        </header>
-        <section class="setup">
-            <div class="inputs">
-                <div class="field">
-                    <label for="numSubjects">Number of Subjects</label>
-                    <input type="number" id="numSubjects" min="1" placeholder="5">
-                </div>
-                <div class="field">
-                    <label for="scale">Scale</label>
-                    <select id="scale">
-                        <option value="10">10-Point</option>
-                        <option value="4">4-Point</option>
-                    </select>
-                </div>
-                <button id="createTable" class="btn">INITIALIZE</button>
+    <div class="wrapper">
+        <aside class="sidebar">
+            <h2>Previous Record</h2>
+            <div class="input-group">
+                <label for="prevCgpa">Prev CGPA</label>
+                <input type="number" id="prevCgpa" min="0" max="10" step="0.01" placeholder="8.2">
             </div>
-        </section>
-
-        <form id="gpaForm"></form>
-        <div id="result" class="result"></div>
-
-        <section class="cgpa">
-            <h2>Calculate CGPA</h2>
-            <div class="inputs">
-                <div class="field">
-                    <label for="prevCgpa">Previous CGPA</label>
-                    <input type="number" id="prevCgpa" step="0.01" min="0" placeholder="8.5">
-                </div>
-                <div class="field">
-                    <label for="prevCredits">Previous Credits</label>
-                    <input type="number" id="prevCredits" min="0" placeholder="60">
-                </div>
-                <button id="calculateCgpa" class="btn">CALCULATE</button>
+            <div class="input-group">
+                <label for="prevCredits">Prev Credits</label>
+                <input type="number" id="prevCredits" min="0" step="1" placeholder="25">
             </div>
-            <div id="cgpaResult" class="result"></div>
-        </section>
+            <div class="input-group">
+                <label for="newCgpa">Updated CGPA</label>
+                <input type="text" id="newCgpa" readonly placeholder="--">
+            </div>
+        </aside>
 
-        <footer>
-            <p>&copy; Made with ❤️ by Vedant and his co-founder ChatGPT</p>
-        </footer>
+        <main class="maincard">
+            <h1>2nd Semester GPA</h1>
+            <form id="gpaForm">
+                <div class="subjects">
+                    <div class="subject-row"><span>DSA</span><span>4</span><input type="number" class="grade" min="0"
+                            max="10" step="0.01" required></div>
+                    <div class="subject-row"><span>COA</span><span>4</span><input type="number" class="grade" min="0"
+                            max="10" step="0.01" required></div>
+                    <div class="subject-row"><span>DMS</span><span>4</span><input type="number" class="grade" min="0"
+                            max="10" step="0.01" required></div>
+                    <div class="subject-row"><span>PDC</span><span>3</span><input type="number" class="grade" min="0"
+                            max="10" step="0.01" required></div>
+                    <div class="subject-row"><span>POM</span><span>2</span><input type="number" class="grade" min="0"
+                            max="10" step="0.01" required></div>
+                    <div class="subject-row"><span>WEBD</span><span>2</span><input type="number" class="grade" min="0"
+                            max="10" step="0.01" required></div>
+                    <div class="subject-row"><span>Elective</span><span>1</span><input type="number" class="grade"
+                            min="0" max="10" step="0.01" required></div>
+                </div>
+                <div class="input-group full">
+                    <label for="expected">Expected GPA</label>
+                    <input type="number" id="expected" min="0" max="10" step="0.01" placeholder="8.5">
+                </div>
+                <button type="submit">Compute</button>
+            </form>
+            <div id="result"></div>
+        </main>
     </div>
 </body>
 
